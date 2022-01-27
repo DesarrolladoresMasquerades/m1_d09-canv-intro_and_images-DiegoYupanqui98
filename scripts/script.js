@@ -1,5 +1,6 @@
 console.log("JS Loadesd")
 
+/*
 const canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -29,6 +30,7 @@ let angle = 0;
 
 let frames = 0
 const drawActionId = setInterval(() => {
+    randomColor();
     if(frames < 180 ) {
         capuccinoCircle("draw");
         drawLine("draw",angle);
@@ -42,7 +44,7 @@ const drawActionId = setInterval(() => {
         angle = 0;
         ctx.clearRect(0,0,canvas.width,canvas.height);
     }
-}, 10);  
+}, 250);
 
 const drawLine = (action,angle) =>{
     action === "draw" ? ctx.strokeStyle = 'black': ctx.strokeStyle = 'white';
@@ -53,8 +55,25 @@ const drawLine = (action,angle) =>{
     ctx.closePath();
 }
 
+const randomColor = () =>{
+    const red = Math.floor(Math.random()*255)
+    const green = Math.floor(Math.random()*255)
+    const blue = Math.floor(Math.random()*255)
+    document.body.style.backgroundColor = `rgb(${red},${green},${blue})`
+}
+
 
 
 
 // .stroke() executes the drawing
+*/
 
+
+const canvas = document.querySelector("canvas");
+canvas.width = 0.7*window.innerWidth;
+canvas.height = 0.7*window.innerHeight;
+
+window.onresize = () =>{
+    canvas.width = 0.7*window.innerWidth;
+    canvas.height = 0.7*window.innerHeight;
+}
